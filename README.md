@@ -63,7 +63,15 @@ PN01   2       668     ID=TRF_00001    period=7        copies=94.9     consensus
 PN01   592     699     ID=TRF_00002    period=7        copies=14.6     consensus_size=7        cons_seq=GTTTCAC ...
 ```
 ### Grap keywords
-As reported, centromeres are high relating to TE( LTR_Copia, LTR_Gypsy, etc.) and some specific centromeric tandem repeat units. Therefore, we should 
+As reported, centromeres are high relating to TE( LTR_Copia, LTR_Gypsy, etc.) and some specific centromeric tandem repeat units. Therefore, we should extract keywords, such as Copia, Gypsy, Helitron, and etc., from `genome.mod.EDTA.TEanno.gff3` respectively, which can attain different type of TE(format `.gff3`).
+```
+grep 'Copia' genome.mod.EDTA.TEanno.gff3 > trf_Copia.split.gff3
+grep 'Gypsy' genome.mod.EDTA.TEanno.gff3 > trf_Gypsy.split.gff3
+grep 'Helitron' genome.mod.EDTA.TEanno.gff3 > trf_Helitron.split.gff3
+grep 'MULE-MuDR' genome.mod.EDTA.TEanno.gff3 > trf_MULE-MuDR.split.gff3
+```
+\
+Additionally, we can use EXCEL to open `genome_trf.split.txt` and then screen the top five of repeat times of `period` in each chromesome (filtered condition: period >= 30, copies >= 2.0. And then to extract these repeat units from 
 
 
 ### Find centromeres by using IGV
