@@ -75,7 +75,7 @@ PN01   2       668     ID=TRF_00001    period=7        copies=94.9     consensus
 PN01   592     699     ID=TRF_00002    period=7        copies=14.6     consensus_size=7        cons_seq=GTTTCAC ...
 ```
 \
-Additionally, we can use EXCEL to open `genome_trf.split.txt` and then screen the top five of repeat times of `period` in each chromesome (filtered condition: period >= 30, copies >= 2.0. [Melters et al., 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-1-r10)). And then to extract these repeat units from `genome_trf.gff3` respectively.
+Additionally, we can use EXCEL to open `genome_trf.split.txt` and then screen the top five repeat times of `period` in each chromosome (filtered condition: period >= 30, copies >= 2.0. [Melters et al., 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-1-r10)). And then to extract these repeat units from `genome_trf.gff3` respectively.
 ```
 grep 'period=107' genome_trf.gff3 > trf_107bp.split.gff3
 grep 'period=214' genome_trf.gff3 > trf_214bp.split.gff3
@@ -85,13 +85,13 @@ grep 'period=428' genome_trf.gff3 > trf_428bp.split.gff3 ...
 ### Find centromeres by using IGV
 Please download IGV from [offical website](https://software.broadinstitute.org/software/igv/download) first.\
 \
-Please prepare four type of files: `genome.fa`, `genome.gff3`,  `TE_XXX.split.gff3`, and `trf_XXXbp.split.gff3`. And then put them into IGV to visual your data. You can zoom in and out and divide core centromeric region according to the density of genome annotation, TE and TRF as follows.\
+Please prepare four type of files: `genome.fa`, `genome.gff3`,  `TE_XXX.split.gff3`, and `trf_XXXbp.split.gff3`. And then put them into IGV to visualize your data. You can zoom in and out and divide core centromeric region according to the density of genome annotation, TE and TRF as follows.\
 \
 You can see the low frequency peak of `genome.gff3` and `TE_XXX.split.gff3` in centromeric regions, while there is the high frequency peak of (top five) `trf_XXXbp.split.gff3`.\
 \
 ![IGV_all](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/IGV_all.jpg)<!-- -->\
 \
-In grape, you can find the top five of repeat units that are 107 and its times, such as 214bp, 321bp, 428bp, etc., in most of chromesomes. \
+In grape, you can find the top five repeat units that are 107 and its times, such as 214bp, 321bp, 428bp, etc., in most of chromosomes. \
 \
 ![IGV_chr01](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/IGV_chr01.jpg)<!-- -->
 
