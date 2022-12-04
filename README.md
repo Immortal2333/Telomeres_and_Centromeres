@@ -1,7 +1,7 @@
 # To find telomeres and centromeres
-This is a method to find some significant information of `genome.fa`, which include the locations, lengths, minimum repeat units, etc. of telomeres and centromeres. Here, we use the genome of grape T2T as an example to show how we find them quickly and accurately.
+This is a method to find some significant information of `genome.fa`, which include the locations, lengths, minimum repeat units, etc. of telomeres and centromeres. Here, we use the genome of grape T2T as an example to show how we find them visually and accurately.
 
-![workflow](man/figures/README-geom_gene_arrow-1.png)<!-- -->
+![workflow](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/workflow.jpg)<!-- -->
 
 ## Telomeres
 ### Install [TIDK](https://github.com/tolkit/telomeric-identifier)
@@ -26,6 +26,7 @@ tidk plot -c /your/path/telomere_find/genome.search_telomeric_repeat_windows.csv
 You can both check the image file `.svg` visually and the original file `.csv` to locate the telomeres. \
 
 ## Centromeres
+This method based on the previous reports, such as [Song et al., 2021](https://doi.org/10.1016/j.molp.2021.06.018), [Sork et al., 2022](https://www.nature.com/articles/s41467-022-29584-y), [Hofstatter et al., 2022](https://doi.org/10.1016/j.cell.2022.06.045), etc.\
 Please download two tools, [EDTA](https://github.com/oushujun/EDTA) and [TRF](https://github.com/Adamtaranto/TRF2GFF), before you start searching.
 ### EDTA
 ```
@@ -41,6 +42,8 @@ source /your/path/anaconda3/bin/activate EDTA
 
 perl EDTA.pl --genome genome.fa --sensitive 1 --overwrite 1 --anno 1 --species others --threads 10
 ```
+In fact, if you have enough different type of TE family in related species, you can establish your own Pan-repeat-database by using [RepeatModeler](https://github.com/Dfam-consortium/RepeatModeler). We can also offer you a method in our study, which you find [here](https://github.com/unavailable-2374/TE_Detective-Annotation).
+
 #### Grap keywords
 As reported, centromeres are high relating to TE (LTR_Copia, LTR_Gypsy, etc.) and some specific centromeric tandem repeat units. Therefore, we should extract keywords, such as Copia, Gypsy, Helitron, and etc., from `genome.mod.EDTA.TEanno.gff3` respectively, which can attain different type of TE (format `.gff3`).
 ```
@@ -82,16 +85,22 @@ grep 'period=428' genome_trf.gff3 > trf_428bp.split.gff3 ...
 ### Find centromeres by using IGV
 Please download IGV from [offical website](https://software.broadinstitute.org/software/igv/download) first.\
 \
-Please perpare four type of files: `genome.fa`, `genome.gff3`,  `TE_XXX.split.gff3`, and `trf_XXXbp.split.gff3`. And then put them into IGV to visual your data. You can zoom in and out and divide core centromeric region according to the density of genome annotation, TE and TRF as follows.\
+Please prepare four type of files: `genome.fa`, `genome.gff3`,  `TE_XXX.split.gff3`, and `trf_XXXbp.split.gff3`. And then put them into IGV to visual your data. You can zoom in and out and divide core centromeric region according to the density of genome annotation, TE and TRF as follows.\
 \
 You can see the low frequency peak of `genome.gff3` and `TE_XXX.split.gff3` in centromeric regions, while there is the high frequency peak of (top five) `trf_XXXbp.split.gff3`.\
-![IGV_all](man/figures/README-geom_gene_arrow-1.png)<!-- -->
-In grape, you can find the top five of repeat units is 107 and its times, such as 214bp, 321bp, 428bp, and etc., in most of chromesome. \
-![IGV_chr01](man/figures/README-geom_gene_arrow-1.png)<!-- -->
+\
+![IGV_all](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/IGV_all.jpg)<!-- -->\
+\
+In grape, you can find the top five of repeat units is 107 and its times, such as 214bp, 321bp, 428bp, etc., in most of chromesomes. \
+\
+![IGV_chr01](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/IGV_chr01.jpg)<!-- -->
 
-However, there have some different patterns in chr03, chr18. It can be 135bp and 66bp (and its times). \
-![IGV_chr03](man/figures/README-geom_gene_arrow-1.png)<!-- -->
-![IGV_chr18](man/figures/README-geom_gene_arrow-1.png)<!-- -->
+However, there have some different patterns in chr03 and chr18. It can be 135bp and 66bp (and its times). \
+\
+![IGV_chr03](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/IGV_chr03.jpg)<!-- -->
+![IGV_chr18](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/IGV_chr18.jpg)<!-- -->
+
+Finally, you can record the coordinate of the core centromeric region at the top of IGV slide windows.
 
 ## Citations
 Xiaoya Shi, et al. The complete reference genome for grapevine (Vitis vinifera L.) genetics and breeding. (2022)\
