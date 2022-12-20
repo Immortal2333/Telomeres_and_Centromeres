@@ -23,7 +23,7 @@ tidk search -f genome.fa -s TTTAGGG -o ./genome.search --dir /your/path/telomere
 
 tidk plot -c /your/path/telomere_find/genome.search_telomeric_repeat_windows.csv -o ./genome.search
 ```
-You can both check the image file `.svg` visually and the original file `.csv` to locate the telomeres. \
+You can both check the image file `.svg` visually and the original file `.csv` to locate the telomeres. 
 
 ## Centromeres
 This method based on the previous reports, such as [Song et al., 2021](https://doi.org/10.1016/j.molp.2021.06.018), [Sork et al., 2022](https://www.nature.com/articles/s41467-022-29584-y), [Hofstatter et al., 2022](https://doi.org/10.1016/j.cell.2022.06.045), etc.\
@@ -103,7 +103,7 @@ However, there have some different patterns in chr03 and chr18. It can be 135bp 
 Finally, you can record the coordinate of the core centromeric region at the top of IGV slide windows.
 
 ## Citations
-Xiaoya Shi, et al. The complete reference genome for grapevine (Vitis vinifera L.) genetics and breeding. (2022)\
+Xiaoya Shi, et al. The complete reference genome for grapevine (Vitis vinifera L.) genetics and breeding. (2022)
 
 ## Contact
 Xu Wang (571720850@qq.com)
