@@ -1,8 +1,7 @@
 # To find telomeres and centromeres
 This is a method to find some significant information of `genome.fa`, which include the locations, lengths, minimum repeat units, etc. of telomeres and centromeres. Here, we use the genome of grape T2T as an example to show how we find them visually and accurately.
 
-![workflow](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/workflow.jpg)<align="right" width="20%">
-``pixy``<img src="https://raw.githubusercontent.com/ksamuk/pixy/master/docs/images/pixy_logo.png" align="right" width="20%">
+``workflow``<img src="https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/pics/workflow.jpg" align="center" width="80%">
 
 ## Telomeres
 ### Install [TIDK](https://github.com/tolkit/telomeric-identifier)
