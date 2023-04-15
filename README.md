@@ -103,7 +103,7 @@ However, there have some different patterns in chr03 and chr18. It can be 135bp 
 Finally, you can record the coordinate of the core centromeric region at the top of IGV slide windows.
 
 ## Citations
-Xiaoya Shi, et al. The complete reference genome for grapevine (Vitis vinifera L.) genetics and breeding. (2022)
+Shi, Xiaoya, et al. "The complete reference genome for grapevine (Vitis vinifera L.) genetics and breeding." Horticulture Research (2023): uhad061.
 
 ## Contact
 Xu Wang (571720850@qq.com)
