@@ -60,7 +60,7 @@ conda activate TRF
 conda install -c bioconda trf
 
 # RUN (defualt)
-trf genome.fa 2 5 7 80 10 50 2000
+trf yoursequence.fa 2 7 7 80 10 50 500 -f -d -m
 
 python TRF2GFF.py -d trf_output.dat -o genome_trf.gff3
 
