@@ -53,6 +53,8 @@ grep 'Helitron' genome.mod.EDTA.TEanno.gff3 > TE_Helitron.split.gff3
 grep 'MULE-MuDR' genome.mod.EDTA.TEanno.gff3 > TE_MULE-MuDR.split.gff3
 ```
 ### TRF
+There have a reported article, which compared many TRF repeats of the different species in centromeric region. You can see this [Supplementary Table](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/Melters et al., 2013.XLS).
+\
 ```
 # Install
 conda create -n TRF
@@ -74,8 +76,10 @@ The output of `genome_trf.split.txt` is as follows.
 PN01   2       668     ID=TRF_00001    period=7        copies=94.9     consensus_size=7        cons_seq=AAGTTTA
 PN01   592     699     ID=TRF_00002    period=7        copies=14.6     consensus_size=7        cons_seq=GTTTCAC ...
 ```
+Opening 'genome_trf.split.txt' by Excel (Microsoft office) and dealing with it by PivotTable as this [workflow](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/TopFiveRepeatUnit_Excel.pdf) introduced. 
+
 \
-Additionally, we can use EXCEL to open `genome_trf.split.txt` and then screen the top five repeat times of `period` in each chromosome (filtered condition: period >= 30, copies >= 2.0. [Melters et al., 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-1-r10)). And then to extract these repeat units from `genome_trf.gff3` respectively.
+And then screening the top five repeat units of `period` in each chromosome (filtered condition: period >= 30, copies >= 2.0. [Melters et al., 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-1-r10)). And then to extract these repeat units from `genome_trf.gff3` respectively.
 ```
 grep 'period=107' genome_trf.gff3 > trf_107bp.split.gff3
 grep 'period=214' genome_trf.gff3 > trf_214bp.split.gff3
