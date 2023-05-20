@@ -76,7 +76,8 @@ PN01   592     699     ID=TRF_00002    period=7        copies=14.6     consensus
 ```
 Opening `genome_trf.split.txt` by Excel (Microsoft office) and dealing with it by PivotTable as this [workflow introduced](https://github.com/Immortal2333/Telomeres_and_Centromeres/blob/main/TopFiveRepeatUnit_Excel.pdf).\
 \
-And then screening the top five repeat units of `period` in each chromosome (filtered condition: period >= 30, copies >= 2.0. [Melters et al., 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-1-r10)). And then to extract these repeat units from `genome_trf.gff3` respectively.
+And then screening the top five repeat units of `period` in each chromosome (filtered condition: period >= 30, copies >= 2.0. [Melters et al., 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-1-r10)). And then to extract these repeat units from `genome_trf.gff3` respectively.\
+Notes: Specifically, for grapevine, we have identified numerous T2T genomes with `period >= 30`. If the repeat units are not clearly visible for your species in IGV, we recommend filtering them based on the `period >= 100`, as outlined in the `Supplementary Table`. This approach will help reduce potential errors, such as period=30/31/32/33/etc., when extracting the period value as `period=XXX`.
 ```
 grep 'period=107' genome_trf.gff3 > trf_107bp.split.gff3
 grep 'period=214' genome_trf.gff3 > trf_214bp.split.gff3
