@@ -42,7 +42,7 @@ source /your/path/anaconda3/bin/activate EDTA
 
 perl EDTA.pl --genome genome.fa --sensitive 1 --overwrite 1 --anno 1 --species others --threads 10
 ```
-In fact, if you have enough different type of TE family in related species, you can establish your own Pan-repeat-database by using [RepeatModeler](https://github.com/Dfam-consortium/RepeatModeler). We can also offer you a method in our study, which you can find [here](https://github.com/zhouyflab/TE_Detective-Annotation).
+In fact, if you have enough different type of TE family in related species, you can establish your own Pan-repeat-database by using [RepeatModeler](https://github.com/Dfam-consortium/RepeatModeler). We can also offer you a method in our study, which you can find [PanGenomeTE](https://github.com/unavailable-2374/TE_Detective-Annotation).
 
 #### Grap keywords
 As reported, centromeres are high relating to TE (LTR_Copia, LTR_Gypsy, etc.) and some specific centromeric tandem repeat units. Therefore, we should extract keywords, such as Copia, Gypsy, Helitron, and etc., from `genome.mod.EDTA.TEanno.gff3` respectively, which can attain different type of TE (format `.gff3`).
